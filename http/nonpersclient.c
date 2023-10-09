@@ -22,6 +22,7 @@ int main() {
 
     for (int i = 1; i <= MAX_REQUESTS; i++) {
         // Create a socket
+        printf("Socket %d created\n",i);
         if ((sockfd = socket(AF_INET, SOCK_STREAM, 0)) < 0) {
             perror("Socket creation failed");
             exit(EXIT_FAILURE);
@@ -57,6 +58,7 @@ int main() {
 
         // Close the connection after receiving the response
         close(sockfd);
+        printf("Socket %d closed\n",i);
     }
 
     return 0;
